@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register</title>
+    </head>
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            {%for field in field_list%}
+            <label for="{{field.name}}">{{field.label}}<br/></label>
+            <input type="{{field.type}}" name="{{field.name}}"> <br>
+            {%endfor%}
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

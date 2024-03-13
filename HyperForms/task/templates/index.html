@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<h2>Welcome to the reading club</h2>
+<p>Its nice to have you here</p>
+<a href="register/"><button>Click here to join!</button></a>
+<p>Current club participants:</p>
+{% if table%}
+<!--    <table>-->
+<!--        <tr>-->
+<!--            {%for field in fields%}-->
+<!--                <th>{{field.name}}</th>-->
+<!--            {%endfor%}-->
+<!--        </tr>-->
+
+<!--            {%for data in table%}-->
+<!--                {%if data%}-->
+<!--                    <tr>-->
+<!--                        {%for info in data%}-->
+<!--                            {%if info%}-->
+<!--                                <td>{{info.value}}</td>-->
+<!--                            {% endif %}-->
+<!--                        {%endfor%}-->
+<!--                    </tr>-->
+<!--                {%endif%}-->
+<!--            {%endfor%}-->
+<!--    </table>-->
+
+    <table>
+        <tr>
+            {%for field in fields%}
+                <th>{{field.name}}</th>
+            {%endfor%}
+        </tr>
+            {%for data2 in table_2%}
+                <tr>
+                    {%for info2 in data2%}
+                        <td>{{info2}}</td>
+                    {%endfor%}
+                </tr>
+            {%endfor%}
+    </table>
+{%else%}
+    No participants so far. Be the first!
+{% endif%}
